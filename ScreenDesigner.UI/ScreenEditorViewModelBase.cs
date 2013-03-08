@@ -6,5 +6,7 @@ namespace ScreenDesigner.UI
     public abstract class ScreenEditorViewModelBase
     {
         public abstract IEnumerable<ToolViewModelBase> Tools { get; set; }
+
+        public abstract void Add(Element element);
     }
 }

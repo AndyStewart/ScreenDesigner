@@ -5,6 +5,14 @@ namespace ScreenDesigner.UI
 {
     public class ContainerToolViewModel : ToolViewModelBase
     {
+        private readonly ElementFactoryBase _elementFactoryBase;
+        private DelegateCommand _addTool;
+
+        public ContainerToolViewModel(ElementFactoryBase elementFactoryBase)
+        {
+            _elementFactoryBase = elementFactoryBase;
+        }
+
         public override string Name
         {
             get { return "Container"; }
@@ -12,7 +20,12 @@ namespace ScreenDesigner.UI
 
         public override DelegateCommand AddTool
         {
-            get { throw new System.NotImplementedException(); }
+            get { return _addTool; }
+        }
+
+        public override void Initialise(ScreenEditorViewModelBase screen)
+        {
+            _addTool = new DelegateCommand(() => screen.Add(_elementFactoryBase.CreateContainer()));
         }
     }
 }

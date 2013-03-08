@@ -3,16 +3,26 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Tools="clr-namespace:ScreenDesigner.UI.Tools"
         Title="Screen Designer" Height="350" Width="525">
     <Grid>
-        <ListView ItemsSource="{Binding Tools}">
-            <ListView.ItemTemplate>
-                <DataTemplate DataType="Tools:ToolViewModelBase">
-                    <StackPanel Orientation="Horizontal">
-                        <Label Content="{Binding Name}" />
-                        <Button Content="Add" Command="{Binding AddTool}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+        <DockPanel LastChildFill="True">
+            <ListView DockPanel.Dock="Left" ItemsSource="{Binding Tools}">
+                <ListView.ItemTemplate>
+                    <DataTemplate DataType="Tools:ToolViewModelBase">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="{Binding Name}" />
+                            <Button Content="Add" Command="{Binding AddTool}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <TreeView SelectedValuePath="">
+                <TreeView.Resources>
+<!--                    <HierarchicalDataTemplate>-->
+<!--                        -->
+<!--                    </HierarchicalDataTemplate>-->
+                </TreeView.Resources>
+            </TreeView>
+        </DockPanel>
+        
         
     </Grid>
 </Window>

@@ -6,5 +6,6 @@ namespace ScreenDesigner.UI.Tools
     {
         public abstract string Name { get; }
         public abstract DelegateCommand AddTool { get; }
+        public abstract void Initialise(ScreenEditorViewModelBase screen);
     }
 }

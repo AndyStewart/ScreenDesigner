@@ -1,6 +1,6 @@
 using Autofac;
 
-namespace ScreenDesigner.UI
+namespace ScreenDesigner.UI.Infrastructure
 {
     public static class Container
     {

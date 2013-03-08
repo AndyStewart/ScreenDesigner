@@ -2,14 +2,15 @@ using System.Reflection;
 using Autofac;
 using Module = Autofac.Module;
 
-namespace ScreenDesigner.UI
+namespace ScreenDesigner.UI.Infrastructure
 {
     public class ScreenDesignerModule : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
             var uiAssembly = Assembly.GetExecutingAssembly();
-            builder.RegisterAssemblyTypes(uiAssembly)
+            var domainAssembly = Assembly.Load("ScreenDesigner");
+            builder.RegisterAssemblyTypes(uiAssembly, domainAssembly)
                 .AsImplementedInterfaces()
                 .As(q => q.BaseType);
         }

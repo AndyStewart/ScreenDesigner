@@ -1,5 +1,6 @@
 ﻿using System.Windows;
-using Autofac;  
+using Autofac;
+using ScreenDesigner.UI.Infrastructure;
 
 namespace ScreenDesigner.UI
 {

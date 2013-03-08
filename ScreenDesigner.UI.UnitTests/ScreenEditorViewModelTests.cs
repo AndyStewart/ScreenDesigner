@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Moq;
 using Ploeh.AutoFixture;
 using ScreenDesigner.UI.Tools;
@@ -20,6 +21,14 @@ namespace ScreenDesigner.UI.UnitTests
             
             Assert.Equal(3, viewModel.Tools.Count());
             Assert.Equal(tools, viewModel.Tools);
+        }
+        
+        [Fact]
+        public void Ctor_WithTools_SetsScreenOnTools()
+        {
+            var tools = new Mock<ToolViewModelBase>();
+            var viewModel = new ScreenEditorViewModel(new[] { tools.Object });           
+            tools.Verify(q => q.Initialise(viewModel));
         }
     }
 }
