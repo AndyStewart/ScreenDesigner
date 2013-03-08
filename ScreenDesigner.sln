@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenDesigner.UI", "ScreenDesigner.UI\ScreenDesigner.UI.csproj", "{C64E1927-A3E8-4393-AB63-D02F8026723C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenDesigner", "ScreenDesigner\ScreenDesigner.csproj", "{B8C84AB8-0882-4306-909E-8194CCB71C73}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenDesigner.Sql", "ScreenDesigner.Sql\ScreenDesigner.Sql.csproj", "{3DC77F94-F5CF-4C04-B011-238008421F19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenDesigner.UnitTests", "ScreenDesigner.UnitTests\ScreenDesigner.UnitTests.csproj", "{7B9A66B7-5B06-437E-964A-1B988A00DBA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenDesigner.UI.UnitTests", "ScreenDesigner.UI.UnitTests\ScreenDesigner.UI.UnitTests.csproj", "{5A26FAAB-738F-4A0E-AE27-A798C88986A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E9210F45-1235-4187-BDD2-1CB46B1DF343}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C64E1927-A3E8-4393-AB63-D02F8026723C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C64E1927-A3E8-4393-AB63-D02F8026723C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C64E1927-A3E8-4393-AB63-D02F8026723C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C64E1927-A3E8-4393-AB63-D02F8026723C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8C84AB8-0882-4306-909E-8194CCB71C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8C84AB8-0882-4306-909E-8194CCB71C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8C84AB8-0882-4306-909E-8194CCB71C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8C84AB8-0882-4306-909E-8194CCB71C73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DC77F94-F5CF-4C04-B011-238008421F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DC77F94-F5CF-4C04-B011-238008421F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DC77F94-F5CF-4C04-B011-238008421F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DC77F94-F5CF-4C04-B011-238008421F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B9A66B7-5B06-437E-964A-1B988A00DBA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B9A66B7-5B06-437E-964A-1B988A00DBA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B9A66B7-5B06-437E-964A-1B988A00DBA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B9A66B7-5B06-437E-964A-1B988A00DBA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A26FAAB-738F-4A0E-AE27-A798C88986A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A26FAAB-738F-4A0E-AE27-A798C88986A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A26FAAB-738F-4A0E-AE27-A798C88986A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A26FAAB-738F-4A0E-AE27-A798C88986A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
