@@ -1,7 +1,16 @@
 namespace ScreenDesigner.UI
 {
+    using AutoMapper;
+
     public class ElementViewModelFactory : ElementViewModelFactoryBase
     {
+        private readonly ElementFactoryBase elementFactory;
+
+        public ElementViewModelFactory(ElementFactoryBase elementFactory)
+        {
+            this.elementFactory = elementFactory;
+        }
+
         public override ElementViewModelBase CreateLine()
         {
             return new LineElementViewModel();
@@ -14,7 +23,10 @@ namespace ScreenDesigner.UI
 
         public override ElementViewModelBase CreateLabel()
         {
-            return new LabelElementViewModel();
+            var element = this.elementFactory.CreateLabel();
+
+            Mapper.CreateMap<LabelElement, LabelElementViewModel>();
+            return Mapper.Map<LabelElement, LabelElementViewModel>((LabelElement)element);
         }
     }
 }

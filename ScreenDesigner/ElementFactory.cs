@@ -14,7 +14,10 @@ namespace ScreenDesigner
 
         public override Element CreateLabel()
         {
-            return new LabelElement();
+            return new LabelElement()
+                {
+                    Text = "Label"
+                };
         }
     }
 }

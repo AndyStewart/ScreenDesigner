@@ -22,11 +22,11 @@
                 <ContentControl Content="{Binding CurrentElement}" Padding="10">
                     <ContentControl.Resources>
                         <DataTemplate DataType="{x:Type ui:LabelElementViewModel}">
-                            <StackPanel>
-                                <StackPanel Orientation="Horizontal">
-                                    <Label Content="Text"></Label>
+                            <StackPanel HorizontalAlignment="Stretch">
+                                <DockPanel LastChildFill="True" Margin="5">
+                                    <Label DockPanel.Dock="Left" Content="Text"></Label>
                                     <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"></TextBox>
-                                </StackPanel>
+                                </DockPanel>
                             </StackPanel>
                         </DataTemplate>
                     </ContentControl.Resources>
