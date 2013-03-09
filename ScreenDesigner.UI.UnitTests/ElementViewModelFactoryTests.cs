@@ -63,7 +63,10 @@
         private static ElementViewModelFactory CreateFactory()
         {
             fakeElementFactory = new Mock<ElementFactory>();
-            var factory = new ElementViewModelFactory(fakeElementFactory.Object);
+            var factory = new ElementViewModelFactory(fakeElementFactory.Object, 
+                                                        () => new LineElementViewModel(),
+                                                        () => new LabelElementViewModel(),
+                                                        () => new ContainerElementViewModel());
             return factory;
         }
     }

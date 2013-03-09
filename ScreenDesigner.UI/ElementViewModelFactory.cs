@@ -6,19 +6,28 @@ namespace ScreenDesigner.UI
     {
         private readonly ElementFactoryBase elementFactory;
 
-        public ElementViewModelFactory(ElementFactoryBase elementFactory)
+        private readonly LineElementViewModel.Factory lineElementFactory;
+
+        private readonly LabelElementViewModel.Factory labelElementFactory;
+
+        private readonly ContainerElementViewModel.Factory containerElementFactory;
+
+        public ElementViewModelFactory(ElementFactoryBase elementFactory, LineElementViewModel.Factory lineElementFactory, LabelElementViewModel.Factory labelElementFactory, ContainerElementViewModel.Factory containerElementFactory)
         {
             this.elementFactory = elementFactory;
+            this.lineElementFactory = lineElementFactory;
+            this.labelElementFactory = labelElementFactory;
+            this.containerElementFactory = containerElementFactory;
         }
 
         public override ElementViewModelBase CreateLine()
         {
-            return new LineElementViewModel();
+            return lineElementFactory();
         }
 
         public override ElementViewModelBase CreateContainer()
         {
-            return new ContainerElementViewModel();
+            return containerElementFactory();
         }
 
         public override ElementViewModelBase CreateLabel()
@@ -26,7 +35,7 @@ namespace ScreenDesigner.UI
             var element = this.elementFactory.CreateLabel();
 
             Mapper.CreateMap<LabelElement, LabelElementViewModel>();
-            return Mapper.Map<LabelElement, LabelElementViewModel>((LabelElement)element);
+            return Mapper.Map((LabelElement)element, labelElementFactory());
         }
     }
 }

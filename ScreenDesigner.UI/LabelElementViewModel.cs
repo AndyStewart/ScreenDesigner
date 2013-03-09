@@ -2,10 +2,8 @@
 {
     public class LabelElementViewModel : ElementViewModelBase
     {
-        public LabelElementViewModel()
-        {
-            Text = "Label";
-        }
         public string Text { get; set; }
+
+        public delegate LabelElementViewModel Factory();
     }
 }

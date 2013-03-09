@@ -10,9 +10,14 @@ namespace ScreenDesigner.UI.Infrastructure
         {
             var uiAssembly = Assembly.GetExecutingAssembly();
             var domainAssembly = Assembly.Load("ScreenDesigner");
+
             builder.RegisterAssemblyTypes(uiAssembly, domainAssembly)
                 .AsImplementedInterfaces()
                 .As(q => q.BaseType);
+
+            builder.RegisterType<LineElementViewModel>();
+            builder.RegisterType<ContainerElementViewModel>();
+            builder.RegisterType<LabelElementViewModel>();
         }
     }
 }
