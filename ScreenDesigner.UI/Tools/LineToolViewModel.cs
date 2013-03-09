@@ -5,10 +5,10 @@ namespace ScreenDesigner.UI
 {
     public class LineToolViewModel : ToolViewModelBase
     {
-        private readonly ElementFactoryBase _elementFactoryBase;
+        private readonly ElementViewModelFactoryBase _elementFactoryBase;
         private DelegateCommand addTool;
 
-        public LineToolViewModel(ElementFactoryBase elementFactoryBase)
+        public LineToolViewModel(ElementViewModelFactoryBase elementFactoryBase)
         {
             _elementFactoryBase = elementFactoryBase;
         }
@@ -19,7 +19,13 @@ namespace ScreenDesigner.UI
 
         public override void Initialise(ScreenEditorViewModelBase screen)
         {
-            addTool = new DelegateCommand(() => screen.Add(_elementFactoryBase.CreateLine()));
+            addTool = new DelegateCommand(() => this.Execute(screen));
+        }
+
+        private void Execute(ScreenEditorViewModelBase screen)
+        {
+            var element = this._elementFactoryBase.CreateLine();
+            screen.Add(element);
         }
     }
 }

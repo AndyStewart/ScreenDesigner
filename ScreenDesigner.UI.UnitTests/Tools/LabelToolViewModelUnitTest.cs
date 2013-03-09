@@ -3,15 +3,17 @@ using Xunit;
 
 namespace ScreenDesigner.UI.UnitTests.Tools
 {
+    using ScreenDesigner.UI.Tools;
+
     public class LabelToolViewModelUnitTest
     {
         [Fact]
         public void AddToolCommand_WhenExecuted_AddsLabelElementToScreen()
         {
             var fakeScreenEditor = new Mock<ScreenEditorViewModelBase>();
-            var fakeElementFactory = new Mock<ElementFactoryBase>();
+            var fakeElementFactory = new Mock<ElementViewModelFactoryBase>();
             
-            var labelElement = new LabelElement();
+            var labelElement = new LabelElementViewModel();
             fakeElementFactory.Setup(q => q.CreateLabel()).Returns(labelElement);
 
             var tool = new LabelToolViewModel(fakeElementFactory.Object);

@@ -5,10 +5,10 @@ namespace ScreenDesigner.UI
 {
     public class ContainerToolViewModel : ToolViewModelBase
     {
-        private readonly ElementFactoryBase _elementFactoryBase;
+        private readonly ElementViewModelFactoryBase _elementFactoryBase;
         private DelegateCommand _addTool;
 
-        public ContainerToolViewModel(ElementFactoryBase elementFactoryBase)
+        public ContainerToolViewModel(ElementViewModelFactoryBase elementFactoryBase)
         {
             _elementFactoryBase = elementFactoryBase;
         }

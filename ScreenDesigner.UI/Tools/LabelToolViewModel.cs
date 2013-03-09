@@ -5,10 +5,10 @@ namespace ScreenDesigner.UI
 {
     public class LabelToolViewModel : ToolViewModelBase
     {
-        private readonly ElementFactoryBase _elementFactoryBase;
+        private readonly ElementViewModelFactoryBase _elementFactoryBase;
         private DelegateCommand _addTool;
 
-        public LabelToolViewModel(ElementFactoryBase elementFactoryBase)
+        public LabelToolViewModel(ElementViewModelFactoryBase elementFactoryBase)
         {
             _elementFactoryBase = elementFactoryBase;
         }

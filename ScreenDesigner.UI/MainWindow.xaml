@@ -1,9 +1,11 @@
 ﻿<Window x:Class="ScreenDesigner.UI.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Tools="clr-namespace:ScreenDesigner.UI.Tools"
+        xmlns:ui="clr-namespace:ScreenDesigner.UI"
         Title="Screen Designer" Height="350" Width="525">
     <Grid>
         <DockPanel LastChildFill="True">
+            <ContentControl></ContentControl>
             <ListView DockPanel.Dock="Left" ItemsSource="{Binding Tools}">
                 <ListView.ItemTemplate>
                     <DataTemplate DataType="Tools:ToolViewModelBase">
@@ -14,13 +16,41 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <TreeView SelectedValuePath="">
-                <TreeView.Resources>
-<!--                    <HierarchicalDataTemplate>-->
-<!--                        -->
-<!--                    </HierarchicalDataTemplate>-->
-                </TreeView.Resources>
-            </TreeView>
+
+            <DockPanel DockPanel.Dock="Right" LastChildFill="True" Width="200">
+                <Label Content="Properties" FontWeight="Bold" DockPanel.Dock="Top" Padding="10"></Label>
+                <ContentControl Content="{Binding CurrentElement}" Padding="10">
+                    <ContentControl.Resources>
+                        <DataTemplate DataType="{x:Type ui:LabelElementViewModel}">
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="Text"></Label>
+                                    <TextBox Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ContentControl.Resources>
+                </ContentControl>
+            </DockPanel>
+
+            <ListBox ItemsSource="{Binding Elements}" HorizontalContentAlignment="Stretch" SelectedItem="{Binding CurrentElement}">
+                <ListBox.Resources>
+                    <DataTemplate DataType="{x:Type ui:LineElementViewModel}">
+                        <Rectangle Height="1" Stroke="Black"></Rectangle>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type ui:ContainerElementViewModel}">
+                        <StackPanel>
+                            <Grid>
+                                <Rectangle Stroke="Black" RadiusX="5" RadiusY="5" Fill="Blue"></Rectangle>
+                                <TextBlock Margin="5">I'm a Container</TextBlock>
+                            </Grid>
+                        </StackPanel>
+                    </DataTemplate>
+                    <DataTemplate DataType="{x:Type ui:LabelElementViewModel}">
+                        <Label Content="{Binding Text}"></Label>
+                    </DataTemplate>
+                </ListBox.Resources>
+            </ListBox>
         </DockPanel>
         
         

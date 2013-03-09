@@ -61,7 +61,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ContainerElementViewModel.cs" />
+    <Compile Include="ElementViewModelBase.cs" />
+    <Compile Include="ElementViewModelFactory.cs" />
+    <Compile Include="ElementViewModelFactoryBase.cs" />
     <Compile Include="Infrastructure\ScreenDesignerModule.cs" />
+    <Compile Include="LabelElementViewModel.cs" />
+    <Compile Include="LineElementViewModel.cs" />
     <Compile Include="ScreenEditorViewModelBase.cs" />
     <Compile Include="Tools\ContainerToolViewModel.cs" />
     <Compile Include="Infrastructure\DelegateCommand.cs" />

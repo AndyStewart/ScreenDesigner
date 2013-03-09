@@ -33,7 +33,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Moq">
-      <HintPath>..\packages\Moq.3.1.416.3\lib\Moq.dll</HintPath>
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="Ploeh.AutoFixture">
       <HintPath>..\packages\AutoFixture.3.0.2\lib\net40\Ploeh.AutoFixture.dll</HintPath>
@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ElementViewModelFactoryTests.cs" />
     <Compile Include="Infrastructure\DelegateCommandTests.cs" />
     <Compile Include="Tools\ContainerToolViewModelUnitTest.cs" />
     <Compile Include="Tools\LabelToolViewModelUnitTest.cs" />
@@ -61,6 +62,7 @@
     <Compile Include="ScreenEditorViewModelTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

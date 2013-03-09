@@ -1,24 +1,30 @@
 using System.Collections.Generic;
 using System.Linq;
-using System.Windows;
+
 using ScreenDesigner.UI.Tools;
 
 namespace ScreenDesigner.UI
 {
+    using System.Collections.ObjectModel;
+
     public class ScreenEditorViewModel : ScreenEditorViewModelBase
     {
         public ScreenEditorViewModel(IEnumerable<ToolViewModelBase> tools)
         {
             Tools = tools;
-            Tools.ToList().ForEach(t => t.Initialise(this));
+            Tools.ToList().ForEach(t => t.Initialise(this));  
+            Elements = new ObservableCollection<ElementViewModelBase>();
         }
 
         public override IEnumerable<ToolViewModelBase> Tools { get; set; }
-        public override void Add(Element element)
+
+        public override void Add(ElementViewModelBase element)
         {
-            MessageBox.Show("Added Element - " + element);
+            Elements.Add(element);
         }
 
-        public Element CurrentElement { get; set; }
+        public ElementViewModelBase CurrentElement { get; set; }
+
+        public ObservableCollection<ElementViewModelBase> Elements { get; set; }
     }
 }

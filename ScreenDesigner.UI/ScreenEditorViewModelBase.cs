@@ -7,6 +7,6 @@ namespace ScreenDesigner.UI
     {
         public abstract IEnumerable<ToolViewModelBase> Tools { get; set; }
 
-        public abstract void Add(Element element);
+        public abstract void Add(ElementViewModelBase element);
     }
 }
